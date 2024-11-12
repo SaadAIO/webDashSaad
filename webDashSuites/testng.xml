@@ -5,6 +5,7 @@
     <test name="MenuManager">
         <classes>
             <class name="tests.MenusTest"/>
+            <class name="tests.MenuTestt"/>
         </classes>
     </test>
 </suite>
