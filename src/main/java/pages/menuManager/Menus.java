@@ -24,21 +24,18 @@ public class Menus extends BasePage {
     By offPremToggle = By.xpath("//p[.='Off Prem']");
     By saveButton=By.xpath("//span[.='Save ']");
 
-    public void explicitWait(By element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(element));
-    }
+
     public void clickMenuManagerButton(){
         click(menuManagerButton);
     }
     public void clickMenuButton(){
-        click(menuManagerButton);
+        click(menuButton);
     }
     public void clickCreateMenuButton(){
         click(createMenuButton);
     }
     public void enterMenuName(){
-        driver.findElement(menuName).sendKeys("{$random}");
+        driver.findElement(menuName).sendKeys("Testmenu123");
     }
     public void enterPOSName(){
         driver.findElement(posName).sendKeys("TestPOS");

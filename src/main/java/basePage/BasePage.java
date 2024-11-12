@@ -2,8 +2,12 @@ package basePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public  class BasePage {
+import java.time.Duration;
+
+public  class  BasePage {
    static protected WebDriver driver;
 
     By usernameField  = By.name("email");
@@ -12,7 +16,9 @@ public  class BasePage {
 
     public BasePage(WebDriver driver) {
        this.driver = driver;
-    }   static public void click(By element){
+    }
+
+    static public void click(By element){
         driver.findElement(element).click();
     }
 public void login(String email,String pass){
@@ -20,5 +26,9 @@ public void login(String email,String pass){
         driver.findElement(passwordField).sendKeys(pass);
         click(loginButton);
 }
+        static  public void explicitWait(By element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+    }
 
 }

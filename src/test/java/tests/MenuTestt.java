@@ -14,7 +14,7 @@ import java.time.Duration;
 
 import static basePage.BasePage.explicitWait;
 
-public class MenusTest extends BaseTest {
+public class MenuTestt extends BaseTest {
     @Test(priority = 1)
     public void testValidLogin() {
         Menus loginDriver = new Menus(driver);
